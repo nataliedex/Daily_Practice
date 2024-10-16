@@ -118,4 +118,58 @@ function palindrome(str){
     }
     console.log("PALINDROME!");
 }
-palindrome(["R","A","C","E","C","A","R"]);
+// palindrome(["R","A","C","E","C","A","R"]);
+
+function MakeCar(carMake, carModel, carColor, numOfDoors){
+    this.make = carMake;
+    this.model = carModel;
+    this.color = carColor;
+    this.doors = numOfDoors;
+    this.honk = function(){
+        alert("BEEP BEEP BEEP");
+    }
+    this.lock = function(){
+        alert(`Locked ${this.doors} doors!`);
+    }
+}
+let hondaCivic = new MakeCar("Honda", "Civic", "Silver", 4);
+let teslaRoadster = new MakeCar("Tesla", "Roadster", "Red", 2);
+
+
+//Create a mouse object that has 4 properties and 3 methods
+let mouse = {}
+    
+mouse.color = "brown";
+mouse.size = "small";
+mouse.tailLength = "long";
+mouse.ears = 2;
+mouse.squeek = function(){
+    console.log("Squeek!");
+}
+mouse.alive = function(){
+        console.log(true);
+}
+mouse.move = function(){
+    console.log("He's coming toward you!");
+}
+
+console.log(mouse);
+
+function MakeMouse(color, size, tailLength, ears){
+    this.color = color;
+    this.size = size;
+    this.tailLength = tailLength;
+    this.ears = ears;
+    this.squeek = function(){
+        console.log("Squeek!");
+    };
+    this.alive = function(){
+        console.log(true);
+    };
+    this.move = function(){
+        console.log("He's coming toward you!");
+    }
+}
+
+const brownMouse = new MakeMouse("brown", "BIG", "Medium", 1);
+console.log(brownMouse);
