@@ -73,22 +73,89 @@ console.log(total);
 
 // List of words
 let words = [];
-function promptUser() {
-    let selectedWord = prompt("What word? ");
-}
-promptUser();
+let selectedWord;
 
-if(selectedWord === "Stop"){
-    words.forEach(word => {
-        console.log(word);
-    });
-} else {
-    words.push(selectedWord);
-    words.forEach(word => {
-        console.log(word);
-    });
-    promptUser();
+function promptUser() {
+    selectedWord = prompt("What word? ");
+    if(selectedWord === "Stop"){
+        words.forEach(word => {
+            console.log(word);
+        });
+    } else {
+        words.push(selectedWord);
+        words.forEach(word => {
+            console.log(word);
+        });
+        // promptUser();
+    }
 }
+// promptUser();
+
+
+// Create a dog object
+
+function Dog(name, species, size){
+    this.name = name,
+    this.species = species,
+    this.size = size,
+    this.bark = function(){
+        console.log("Bark!");
+    }
+}
+
+const winnie = new Dog("Winnie", "King Charles Cavelier", "small");
+console.log(winnie);
+const moose = new Dog("Moose", "Mix", "Tiny");
+console.log(moose);
+
+// Modeling a circle
+// const r = Number(prompt("Enter the circle radius:"));
+
+// const circle = {
+//     circumference: function() {
+//         return 2 * 3.14 * r;
+//     },
+//     area: function(){
+//         return 3.14 * r * r;
+//     }
+// };
+
+// console.log(`Its circumference is ${circle.circumference}`);
+// console.log(`Its area is ${circle.area}`);
+
+// Modeling a bank account
+const account = {
+    name: "Alex",
+    balance: 0,
+    credit: function(value) {
+        return (this.balance += value);
+    },
+    describe: function() {
+        return `owner: ${this.name}, balance: $${this.balance}`;
+    },
+}
+console.log(account.describe(account.credit(250)));
+console.log(account.describe(account.credit(-80)));
+
+// Translate border-left-width to borderLeftWidth
+
+
+function camelize(str) {
+    let words = str.split("-");
+
+    for(let i = 0; i < words.length; i++){
+        if(words[i]){
+            words[i] = words[i][0].toUpperCase() + words[i].slice(1);
+        }   
+    }
+    console.log(words.join(""));
+}
+
+camelize("-Natalie-is-great-");
+
+
+
+
 
 
 
