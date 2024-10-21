@@ -153,6 +153,29 @@ function camelize(str) {
 
 camelize("-Natalie-is-great-");
 
+function range(x, y) {
+    let arr = [];
+    for(var i = x; i <= y; i++) {
+        arr.push(i);
+    }
+    return arr;
+}
+
+console.log(range(10, 21));
+
+function sumOfNumbers(x, y) {
+    let total = 0;
+    for(var i = x; i <= y; i++) {
+        total += i;
+    }
+    return total;
+}
+console.log(sumOfNumbers(1, 10));
+
+
+
+
+
 
 
 
