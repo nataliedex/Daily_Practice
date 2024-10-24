@@ -172,6 +172,121 @@ function sumOfNumbers(x, y) {
 }
 console.log(sumOfNumbers(1, 10));
 
+function stepRange(start, end, step) {
+    let arr = [];
+    if(step){
+        for(var i = start; i <= end; i = i + step) {
+            arr.push(i);
+        }
+    } else {
+        for(var i = start; i <= end; i++) {
+            arr.push(i);
+        }
+    }
+    
+    return arr;
+}
+
+console.log(stepRange(1,10));
+
+// Reversing array
+function reverseArray(arr){
+    let newArr = [];
+    for(var i = 0; i < arr.length; i++){
+        newArr.unshift(arr[i]);
+    }
+    return newArr;
+}
+let myArray = ["A", "B", "C"];
+console.log(reverseArray(myArray));
+
+function reverseInPlace(arr){
+    arr = reverseArray(arr); 
+    return arr;
+}
+
+console.log(reverseInPlace(myArray));
+
+
+
+//Create a dog object that has four properties and three methods
+
+let dog = {
+    color: "brown",
+    size: "medium",
+    smelly: true,
+    hasFur: true,
+    bark: function(){
+        console.log("bark!");
+    },
+    poop: function(){
+        console.log("POOP!");
+    },
+    jump: function(){
+        console.log("BLAST OFF");
+    }
+};
+console.log(dog);
+
+function CreateDog(color, size, smelly, hasFur){
+    this.color = color;
+    this.size = size;
+    this.smelly = smelly;
+    this.hasFur = hasFur;
+    this.bark = function(){
+        console.log("bark!");
+    };
+    this.poop = function(){
+        console.log("POOP!");
+    };
+    this.jump = function(){
+        console.log("BLAST OFF");
+    };
+};
+const myDog = new CreateDog("Black", "Small", true, false);
+CreateDog.prototype.numOfLegs = 4;
+
+
+console.log(myDog);
+console.log(myDog.numOfLegs);
+
+class TonyHawkProSkater{
+    constructor(hair, board, speed, hat){
+        this.hair = hair;
+        this.board = board;
+        this.speed = speed;
+        this.hat = hat
+    }
+    saying(){
+        console.log("Cool dude!");
+    };
+    move() {
+        console.log("OLLY!");
+    };
+    fall() {
+        console.log("Aw MANNNNNNN!");
+    };
+}
+
+
+const jimmyFromTheBlock = new TonyHawkProSkater("brown", "slick", "super fast", "backwards");
+console.log(jimmyFromTheBlock);
+console.log(jimmyFromTheBlock.move());
+
+fetch("https://dog.ceo/api/breeds/image/random")
+    .then(res => res.json())
+    .then(data => {
+        const dogData = data.message;
+        console.log(data.message);
+        document.querySelector("img").src = dogData;
+        const breed = dogData.split("/")[4];
+        document.querySelector("h1").innerHTML = breed;
+        
+    })
+    .catch(err => {
+        console.log(`error ${err}`);
+    })
+
 
 
 
