@@ -287,7 +287,65 @@ fetch("https://dog.ceo/api/breeds/image/random")
         console.log(`error ${err}`);
     })
 
+    const pizza= {};
+    pizza.toppings = ["pepperoni", "onion","black olives"];
+    pizza.sause = "light";
+    pizza.cheese = "extra";
+    pizza.crust = "New York Style";
+    pizza.cook = function(){
+        console.log("That will be 10 mins...");
+    };
+    pizza.eat = function(){
+        console.log("YUM!");
+    };
+    pizza.thoughts = function(){
+        console.log(`I really like that ${cheese} cheese`);
+    };
 
+    console.log(pizza);
+
+    class Pizza {
+        constructor(toppings, sauce, cheese, crust){
+            this.toppings = toppings;
+            this.sauce = sauce;
+            this.cheese = cheese;
+            this.crust = crust
+        }
+        cook(){
+            console.log("That will be 10 mins...");
+        };
+        eat(){
+            console.log("YUM!");
+        };
+        thoughts(){
+            console.log(`I really like that ${cheese} cheese`);
+        };
+    };
+
+    const myPizza = new Pizza(["sausage", "spinach","garlic"], "no", "Lots", "thin-crust");
+    console.log(myPizza);
+
+//Create a constructor with 4 properties and 3 methods
+class NewPizza {
+    constructor(sauce, toppings, cheese, crust){
+        this.sauce = sauce;
+        this.topping = toppings;
+        this.cheese = cheese;
+        this.crust = crust
+    }
+    cook(){
+        console.log("HOT HOT HOT!");
+    };
+    eat(){
+        console.log(`YUM! I really like the ${sauce}`);
+    };
+    trash(){
+        console.log("Can't eat annymore!!");
+    }
+};
+
+const dominos = new NewPizza("heavy", ["anchovies", "garlic"], "no cheese", "thick");
+console.log(dominos);
 
 
 
