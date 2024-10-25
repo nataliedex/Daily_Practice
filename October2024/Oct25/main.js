@@ -61,6 +61,28 @@ function getDogImage(){
     })
 }
 
+// CODE WARS
+// vowel counts
+
+
+function getCount(str){
+    const vowels = ["a", "e", "i", "o", "u"];
+    let vowelCount = 0;
+    str.split("").forEach(char => {
+        if(vowels.includes(char)){
+            vowelCount += 1;
+        }
+    });
+    console.log(vowelCount);
+    return vowelCount;
+    
+}
+
+const myString = "hello my name is natalie";
+getCount(myString);
+
+
+
 
 
 
