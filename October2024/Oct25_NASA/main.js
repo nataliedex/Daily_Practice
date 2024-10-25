@@ -351,7 +351,7 @@ const ingredientList = document.getElementById("ingredient-list");
 document.querySelector("button").addEventListener("click", getDrink);
 function getDrink(){
     ingredientList.innerHTML = "";
-    const drinkInput = document.querySelector("input").value;
+    const drinkInput = document.querySelector("input").value.trim();
 
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkInput}`)
     .then(res => res.json())
@@ -386,6 +386,17 @@ function getDrink(){
         console.log(`error ${err}`);
     })
 }
+
+// return middle character
+function getMiddle(s) {
+    if(s.length % 2 === 0){
+        return (`${s[(s.length/2)-1]}${s[(s.length/2)]}`);
+    } else {
+        return s[(Math.ceil(s.length/2))-1];
+    }
+}
+
+getMiddle("abcdefg");
 
 
 
