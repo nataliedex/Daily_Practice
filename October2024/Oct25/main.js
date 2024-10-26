@@ -81,6 +81,30 @@ function getCount(str){
 const myString = "hello my name is natalie";
 getCount(myString);
 
+// 100 Dev projects
+
+
+class NetFlixShows {
+    constructor(genre, title, rating, episodes){
+        this.genre = genre;
+        this.title = title;
+        this.rating = rating;
+        this.episodes = episodes;
+    }
+    play(){
+        console.log("playing...");
+    }
+    stop(){
+        console.log("Stopping");
+    }
+    saveToList(){
+        console.log("Saving...");
+    }
+}
+
+const lost = new NetFlixShows("drama", "Lost", "85%", 50);
+
+
 
 
 
