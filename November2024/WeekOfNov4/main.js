@@ -99,7 +99,7 @@ function returnElementArray(arr){
 
 class EspressoMachine {
     constructor(model, brand, color,cost) {
-        // properties and perameters
+        // properties and perimeters
         this.model = model;
         this.brand = brand;
         this.color = color;
@@ -177,3 +177,75 @@ class Room{
     }
 
 }
+// too much to analyze here!
+let hourlyRate = 250;
+let hours = 160;
+let taxRate = .35;
+
+function calculateProfit(rate, numOfHourse, taxes){
+    return rate * numOfHourse * (1 - taxes);
+}
+function holdForTaxes(profitMade){
+    return hourlyRate * hours - profitMade;
+}
+
+let profit = calculateProfit(hourlyRate, hours, taxRate);
+let taxesHeld = holdForTaxes(profit);
+
+console.log(profit);
+console.log(taxesHeld);
+
+// Encapsulation 
+let seriousBusinessPerson = {
+    hourlyRate: 250,
+    hours: 160,
+    taxRate: .35,
+    calculateProfit: function(){
+        return this.hourlyRate * this.hours * (1 - this.taxRate);
+    },
+
+}
+// abstractions - hide unnecessary details, to make smaller more manageable pieces of code
+
+function AgencyContractor(hourlyRate, hours, taxRate){
+    this.hours = hours;
+    this.taxRate = taxRate;
+    let rate = hourlyRate;
+    let calculateProfit = function(){
+        return rate * this.hours * (1 - this.taxRate);
+    }
+    this.invoiceClient = function(){
+        return `Your invoice total is ${rate * this.hours}`;
+    }
+}
+let natalie = new AgencyContractor(250, 160, .35);
+console.log(natalie.invoiceClient());
+console.log(natalie.hourlyRate);
+
+
+function validParentheses(parenStr) {
+    // length needs to be even, else false
+    // equal number of left sides and right sides
+    // if a set is closed, next char can not be a closed
+    // Your code here
+    const splitString = parenStr.split("");
+    console.log(splitString);
+    let stack = [];
+    for(let char of splitString) {
+        if(char === "("){
+            stack.push(char);
+        } else if( char === ")"){
+            if(stack.length === 0) {
+                return false;
+            } else {
+                stack.pop();
+            }
+        }
+    }
+    return stack.length === 0; 
+}
+
+
+  const myString = "()()())";
+  console.log(validParentheses(myString));
+  
