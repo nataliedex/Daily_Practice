@@ -224,9 +224,7 @@ console.log(natalie.hourlyRate);
 
 
 function validParentheses(parenStr) {
-    // length needs to be even, else false
-    // equal number of left sides and right sides
-    // if a set is closed, next char can not be a closed
+
     // Your code here
     const splitString = parenStr.split("");
     console.log(splitString);
@@ -248,4 +246,117 @@ function validParentheses(parenStr) {
 
   const myString = "()()())";
   console.log(validParentheses(myString));
-  
+
+
+//   start a farm
+// underscore means don't touch this property
+class Animal{
+    constructor(name){
+        this._name = name;
+    }
+    get name(){
+        return this._name;
+    }
+    speak(){
+        console.log(`${this._name} makes a sound`);
+    }
+    
+}
+
+
+// extending the class
+class Dog extends Animal{
+    constructor(name, breed){
+        // super comes from the Animal class
+        super(name);
+        this._breed = breed;
+    }
+    get breed(){
+        return this._breed;
+    }
+    speak(){
+        super.speak();
+        console.log(`${this.name} barks`);
+    }
+    
+}
+
+class Cat extends Animal{
+    constructor(name, breed, color){
+        super(name);
+        this._breed = breed;
+        this._color = color;
+    }
+    get breed(){
+        return this._breed;
+    }
+    get color(){
+        return this._color;
+    }
+    speak(){
+        super.speak();
+        console.log("Meow!");
+    }
+}
+
+let simba = new Dog("Simba", "Spaniel");
+let meowmeow = new Cat("Meow Meow", "kitty", "orange");
+
+let farm = [simba, meowmeow];
+for (a of farm){
+    a.speak();
+}
+
+class Product {
+    constructor(name, price, category){
+        this._name = name;
+        this._price = price;
+        this._category = category;
+    }
+    get name(){
+        return this._name;
+    }
+    get price(){
+        return this._price;
+    }
+    get category(){
+        return this._category;
+    }
+    getDetails(){
+        console.log(`Getting details about the ${this._name}`);
+    }
+}
+
+class Electronics extends Product{
+    constructor(name, price, category, warrentyPeriod){
+        super(name, price, category);
+        this.warrentyPeriod = warrentyPeriod; 
+    }
+    checkWarrenty(){
+        console.log(`checking warrenty for ${this.name}`);
+    }
+}
+class Clothing extends Product {
+    constructor(name, price, category, size, material){
+        super(name, price, category);
+        this.size = size;
+        this.material = material;
+    }
+}
+class Books extends Product {
+    constructor(name, price, category, author, genre){
+        super(name, price, category);
+        this.author = author;
+        this.genre = genre;
+    }
+}
+
+const ameliaDress = new Clothing("Amlia Dress", 119.99, "dress", "small", "cotton");
+const lordOfTheRings = new Books("Lord of the Rings", 25, "fiction", "someones", "fantasy");
+const vcr = new Electronics("VCR", 135, "audio/visual", 12);
+
+ameliaDress.getDetails();
+lordOfTheRings.getDetails();
+vcr.getDetails();
+
+ 
