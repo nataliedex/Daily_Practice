@@ -359,4 +359,39 @@ ameliaDress.getDetails();
 lordOfTheRings.getDetails();
 vcr.getDetails();
 
- 
+function positiveSum(arr) {
+  return arr.reduce((acc, c) => {
+    if(c > 0){
+        return acc + c;
+    }
+    return acc;
+  },0); 
+}
+
+const thisArray = [1, 4, 6, 9, -10, 3,-14, 27, -8];
+console.log(positiveSum(thisArray));
+
+function rowSumOddNumbers(n) {
+	// TODO 
+    return n ** 3;
+
+}
+
+function isValidWalk(walk) {
+    //insert brilliant code here
+    let curPosition = [0,0];
+    const directions = {
+        "n": [0, 1],
+        "s": [0, -1],
+        "e": [1, 0],
+        "w": [-1, 0],
+    };
+    walk.forEach(step => {
+        const [dx, dy] = directions[step];
+        curPosition = [curPosition[0] + dx, + curPosition[1] + dy];
+    });
+    return curPosition[0] === 0 && curPosition[1] === 0 && walk.length === 10;
+}
+
+const thisWalk = ['w','e','w','e','w','e','w','e','w','e'];
+console.log(isValidWalk(thisWalk));
