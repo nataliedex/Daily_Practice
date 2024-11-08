@@ -395,3 +395,24 @@ function isValidWalk(walk) {
 
 const thisWalk = ['w','e','w','e','w','e','w','e','w','e'];
 console.log(isValidWalk(thisWalk));
+
+function squareSum(numbers){
+   return numbers.reduce((a, c) => {
+        return a + (c ** 2);
+    },0);
+}
+
+console.log(squareSum(thisArray));
+
+function countSheeps(sheep) {
+    // TODO
+    return sheep.reduce((acc, cur) => {
+        if(cur){
+            return acc = acc + 1;
+        }
+        return acc;
+    },0);
+  }
+
+const sheepArr = [true,  true,  true,  false, true,  true,  true,  true , true,  false, true,  false, true,  false, false, true , true,  true,  true,  true , false, false, true,  true];
+console.log(countSheeps(sheepArr));
