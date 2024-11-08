@@ -416,3 +416,57 @@ function countSheeps(sheep) {
 
 const sheepArr = [true,  true,  true,  false, true,  true,  true,  true , true,  false, true,  false, true,  false, false, true , true,  true,  true,  true , false, false, true,  true];
 console.log(countSheeps(sheepArr));
+
+class Contractor {
+    constructor(name, role){
+        this._name = name;
+        this._role = role;
+    }
+    get name(){
+        return this._name;
+    }
+    get role(){
+        return this._role;
+    }
+    sayHello(){
+        console.log(`Hello, I am ${this._name} and I am a ${this._role}`);
+    }
+
+}
+class FrontEnd extends Contractor{
+    constructor(name, role, tech){
+        super(name, role);
+        this._tech = tech;
+    }
+    get tech(){
+        return this._tech;
+    }
+    sayHello(){
+        console.log(`Hello, I am ${this._name} and I use ${this._tech}`);
+    }
+
+}
+class BackEnd extends Contractor{
+    constructor(name, role, tech){
+        super(name, role);
+        this._tech = tech;
+    }
+    get tech(){
+        return this._tech;
+    }
+    sayHello(){
+        console.log(`Hello, I am ${this._name} and I use ${this._tech}`);
+    }
+}
+
+let chelsea = new Contractor("Chelsea", "Developer");
+let john = new FrontEnd("John", "Developer", "JavaScript");
+let sammy = new BackEnd("Sammy", "Developer", "React");
+
+function numberToString(num) {
+    // Return a string of the number here!
+    return num.toString();
+  }
+const aNumber = 6;
+console.log(aNumber);
+console.log(numberToString(aNumber));
