@@ -470,3 +470,10 @@ function numberToString(num) {
 const aNumber = 6;
 console.log(aNumber);
 console.log(numberToString(aNumber));
+
+function reverseWords(str){
+    return str.split(" ").reverse().join(" "); // reverse those words
+  }
+
+const todaysString = "Hello my name is Natalie";
+console.log(reverseWords(todaysString));
