@@ -520,3 +520,24 @@ getData();
 
 //   const nov10Array = ['5', '1', '4', null, '6', 9, '7', null, '3', false, null, [], null, '6', '9', {}, 5, 1, +0, 5, true, 2, 7, +0];
 //   console.log(moveZeros(nov10Array));
+
+const h1Item = document.querySelector("h1");
+
+
+for(let i = 1; i <=21; i++){
+    h1Item.innerHTML += `${i} `;
+}
+
+const dogButton = document.getElementById("dog-button");
+dogButton.addEventListener("click", getDogs);
+
+function getDogs(){
+    fetch("https://dog.ceo/api/breeds/image/random")
+    .then(res=>res.json())
+    .then(data => {
+        document.querySelector("img").src = data.message;
+    })
+    .catch(err => {
+        console.log(`error: ${err}`);
+    })
+}
