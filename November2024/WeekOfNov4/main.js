@@ -477,3 +477,46 @@ function reverseWords(str){
 
 const todaysString = "Hello my name is Natalie";
 console.log(reverseWords(todaysString));
+
+document.querySelector("button").addEventListener("click", handleFetch);
+
+function handleFetch(){
+    fetch("https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json")
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(err =>{
+        console.log(`error: ${err}`);
+    })
+}
+
+async function getData() {
+    try {
+        const response = await fetch("https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json");
+        const data = await response.json();
+        console.log(data);
+    } catch(error) {
+        console.log(error);
+    }
+}
+getData();
+
+// function moveZeros(arr) {
+//     let index = 0;
+//     arr.forEach(el => {
+//         if(el !== 0){
+//             arr[index] = el;
+//             index++;
+//         }
+//     });
+
+//     while(index < arr.length){
+//         arr[index] = 0;
+//         index++;
+//     }
+//     return arr;
+//   }
+
+//   const nov10Array = ['5', '1', '4', null, '6', 9, '7', null, '3', false, null, [], null, '6', '9', {}, 5, 1, +0, 5, true, 2, 7, +0];
+//   console.log(moveZeros(nov10Array));
