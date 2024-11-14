@@ -11,3 +11,24 @@ function maps(x){
 
 const myArray = [2, 2, 2, 2, 2, 2];
 console.log(maps(myArray));
+
+function tribonacci(signature,n){
+  //your code here
+  if (n === 0){
+    return [];
+  } else if(n <= 3){
+    return signature.slice(0,n);
+  } else {
+    let result = signature.slice();
+    while (result.length < n){
+      const nextValue = result[result.length-1] + result[result.length-2] + result[result.length-3];
+      result.push(nextValue);
+      
+    }
+    return result;
+  }
+}
+
+const triArray = [0,3,5];
+const numElements = 7;
+console.log(tribonacci(triArray, numElements));
