@@ -17,3 +17,10 @@ function sum (numbers) {
 
 const myArray = [];
 console.log(sum(myArray));
+
+function squareDigits(num){
+    return num.toString().split("").map((el) => el ** 2).join("");   
+  }
+
+const thisNum = 54323;
+console.log(squareDigits(thisNum));
