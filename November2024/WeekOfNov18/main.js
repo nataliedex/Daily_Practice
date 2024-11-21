@@ -54,3 +54,9 @@ function solution(str){
 
 const myString = "natalie";
 console.log(solution(myString));
+
+function makeUpperCase(str) {
+    // Code here
+    return str.split("").map(el => el.toUpperCase()).join("");
+  }
+console.log(makeUpperCase(myString));
