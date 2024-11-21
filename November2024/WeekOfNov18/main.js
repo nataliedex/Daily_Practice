@@ -60,3 +60,13 @@ function makeUpperCase(str) {
     return str.split("").map(el => el.toUpperCase()).join("");
   }
 console.log(makeUpperCase(myString));
+
+function findAverage(array) {
+    // your code here
+    if(array.length === 0){
+        return 0;
+    } else {
+        return array.reduce((acc, cur) => acc + cur,0) / array.length;   
+    }
+  }
+console.log(findAverage(thisArray));
