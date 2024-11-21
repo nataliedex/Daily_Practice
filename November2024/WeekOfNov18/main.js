@@ -47,3 +47,10 @@ function minimumSteps(numbers, value){
 const thisArray = [2,1,2,9,10,22,4];
 const aNumber = 12;
 console.log(minimumSteps(thisArray, aNumber));
+
+function solution(str){
+  return str.split("").reverse().join("");
+}
+
+const myString = "natalie";
+console.log(solution(myString));
