@@ -64,3 +64,25 @@ function fakeBin(x){
 }
 const binString = "23453297056948574729";
 console.log(fakeBin(binString));
+
+function invert(array) {
+  return array.map(el => el * -1);
+}
+const strNumbers = [1, 2, 3, 4, 5];
+console.log(invert(strNumbers)); 
+
+function solution(str, ending){
+  if(ending === ""){
+    return true;
+  } else {
+    if((str.split("").splice(-ending.length).join("")) === ending.split("").join("")){
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+const solStr = "abc";
+const solEnding = "bc";
+console.log(solution(solStr, solEnding));
