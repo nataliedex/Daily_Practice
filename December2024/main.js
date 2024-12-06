@@ -47,3 +47,11 @@ function areYouPlayingBanjo(name) {
 }
 const otherName = "Ringo"
 console.log(areYouPlayingBanjo(otherName));
+
+function findNeedle(haystack) {
+  const location = haystack.findIndex((str) => str === "needle");
+  return `found the needle at position ${location}`;
+}
+
+const needlestickArray = ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"];
+console.log(findNeedle(needlestickArray));
