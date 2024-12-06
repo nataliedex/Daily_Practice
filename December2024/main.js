@@ -55,3 +55,12 @@ function findNeedle(haystack) {
 
 const needlestickArray = ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"];
 console.log(findNeedle(needlestickArray));
+
+function fakeBin(x){
+  return x
+    .split("")
+    .map(el => (el < 5 ? "0" : "1"))
+    .join("");
+}
+const binString = "23453297056948574729";
+console.log(fakeBin(binString));
