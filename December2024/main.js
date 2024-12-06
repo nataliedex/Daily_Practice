@@ -37,3 +37,13 @@ function abbrevName(name){
 
 const myFullName = "Natalie Blumen";
 console.log(abbrevName(myFullName));
+
+function areYouPlayingBanjo(name) {
+  if(name.split("")[0].toLowerCase() === "r"){
+    return `${name} plays banjo`;
+  } else {
+    return `${name} does not play banjo`;
+  }
+}
+const otherName = "Ringo"
+console.log(areYouPlayingBanjo(otherName));
