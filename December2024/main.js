@@ -86,3 +86,17 @@ function solution(str, ending){
 const solStr = "abc";
 const solEnding = "bc";
 console.log(solution(solStr, solEnding));
+
+async function getACuteDogPhoto(){
+  try {
+    const res = await fetch("https://dog.ceo/api/breeds/image/random");
+    const data = await res.json();
+    console.log(data);
+    document.querySelector("img").src = data.message;
+  } catch (err) {
+    console.log(err);
+  }
+  
+}
+
+getACuteDogPhoto()
