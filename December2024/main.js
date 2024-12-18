@@ -99,4 +99,34 @@ async function getACuteDogPhoto(){
   
 }
 
-getACuteDogPhoto()
+// getACuteDogPhoto();
+
+function timeCorrect(timestring) {
+  if (!timestring) return null;
+  const validFormat = /^\d{2}:\d{2}:\d{2}$/;
+  if(!validFormat.test(timestring)) return null;
+ 
+  let [timeHour, timeMinute, timeSecond] =  timestring.split(":").map(Number);
+
+  if (timeHour === 0 && timeMinute === 0 && timeSecond === 0) {
+    return "23:59:59";
+  }
+
+  timeMinute += Math.floor(timeSecond/60);
+  timeSecond %= 60;
+
+  timeHour += Math.floor(timeMinute/60);
+  timeMinute %= 60;
+
+  timeHour %= 24;
+
+  return [
+    timeHour.toString().padStart(2, "0"),
+    timeMinute.toString().padStart(2, "0"),
+    timeSecond.toString().padStart(2, "0")
+  ].join(":");
+}
+
+const myTimeString = "0a:1c:22";
+;
+console.log(timeCorrect(myTimeString));
