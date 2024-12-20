@@ -130,3 +130,31 @@ function timeCorrect(timestring) {
 const myTimeString = "0a:1c:22";
 ;
 console.log(timeCorrect(myTimeString));
+
+// function word is a palindrome
+
+// work => string, no empty strings, no special characters, 1 word, 
+// return true || false
+
+
+// 
+
+function isPalindome(word){
+  return(word === word.split("").reverse().join(""))
+}
+const myWord = "racecar";
+console.log(isPalindome(myWord));
+
+function combineArray(nums1, nums2, m, n){
+  return nums1
+    .slice(0, m)
+    .concat(nums2
+    .slice(0, n))
+    .sort((a, b) => a-b);
+}
+
+const firstArr = [1,2,3,0,0,0];
+const secondArr = [2, 5, 6];
+const num1 = 3;
+const num2 = 3;
+console.log(combineArray(firstArr, secondArr, num1, num2));
