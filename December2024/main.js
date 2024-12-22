@@ -158,3 +158,85 @@ const secondArr = [2, 5, 6];
 const num1 = 3;
 const num2 = 3;
 console.log(combineArray(firstArr, secondArr, num1, num2));
+
+var removeElement = function(nums, val) {
+  let k = 0;
+  for (let i = 0; i < nums.length; i++){
+      if(nums[i] !== val){
+        nums[k] = nums[i];  
+        k++;
+      } 
+  }
+  return k;
+};
+
+const myNums = [3,2,2,3];
+const myVal = 3;
+console.log(removeElement(myNums, myVal));
+
+// remove duplicates
+// given an array - numbers only, whole numbers only, sorted from smallest to largest
+// return a value with the number of unique elements in the nums array
+function removeDups(arr){
+  if(arr.length === 0) return 0;
+
+  let k = 0;
+  for(let i = 1; i < arr.length; i++){
+    if(arr[i] !== arr[k]){
+      k++;
+      arr[k] = arr[i];
+    }
+  }
+  return k + 1;
+}
+
+const myArray = [1,1,2,3,4,5,5,6,6,6,6,6];
+const yourArray = [1,1,1,1,1,1];
+const ourArray = [4,6,7,7,7,7,7];
+console.log(removeDups(myArray), "6");
+console.log(removeDups(yourArray), "1");
+console.log(removeDups(ourArray), "3");
+
+//given an array of whole numbers, array will be provided sorted from lowest to highest, 
+// there can be dups.  
+//evaluate the array by return the number of items in the array, k.  a number can appear at most 2 times in the array.
+
+function removeDupsPartTwo(nums){
+  let i = 0;
+  for(num of nums){
+    if(i < 2 || num !== nums[i-2]){
+      nums[i] = num;
+      i++;
+    }
+  }
+  return i;
+}
+
+console.log(removeDups(myArray), "9");
+console.log(removeDups(yourArray), "2");
+console.log(removeDups(ourArray), "3");
+
+// given an array.  the array will include whole numbers. never empty, 
+// majority number means that it appears more than half the length of the given array
+function majorityElement(arr){
+  let count = 0;
+  let candidate;
+  for(let i = 0; i < arr.length; i++){
+    if(count === 0){
+      candidate = arr[i];
+      count++;
+    } else if(candidate === arr[i]){
+      count++;
+    } else {
+      count--;
+    }
+  }
+  return candidate;
+}
+
+const array1 = [1,1,1,1,1,2,3,4,5];
+console.log(majorityElement(array1), "1");
+const array2 = [2,2,1,1,1,1, 1, 1,2,2];
+console.log(majorityElement(array2), "2");
+const array3 = [3, 2, 3];
+console.log(majorityElement(array3), "3");
