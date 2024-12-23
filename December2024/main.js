@@ -218,14 +218,14 @@ console.log(removeDups(ourArray), "3");
 
 // given an array.  the array will include whole numbers. never empty, 
 // majority number means that it appears more than half the length of the given array
-function majorityElement(arr){
+function majorityElement(nums){
   let count = 0;
   let candidate;
-  for(let i = 0; i < arr.length; i++){
+  for(let i = 0; i < nums.length; i++){
     if(count === 0){
-      candidate = arr[i];
+      candidate = nums[i];
       count++;
-    } else if(candidate === arr[i]){
+    } else if(candidate === nums[i]){
       count++;
     } else {
       count--;
@@ -240,3 +240,52 @@ const array2 = [2,2,1,1,1,1, 1, 1,2,2];
 console.log(majorityElement(array2), "2");
 const array3 = [3, 2, 3];
 console.log(majorityElement(array3), "3");
+
+//given an array of whole numbers.  never empty.  rotate by x numbers.  
+//will the array always be greater than the rotation number
+// return a new array
+
+function rotateArray(nums, k){
+  const rotations = k % nums.length;
+  nums = nums.slice(-rotations).concat(nums.slice(0, -rotations));
+
+  return nums;
+}
+
+
+
+const rArray1 = [1,4,5,6,9,3,6];
+const k = 4;
+console.log(rotateArray(rArray1, k), "[6,9,3,6,1,4,5]");
+console.log(rotateArray([-1,-100,3,99], 2), "[3, 99, -1, -100]");
+
+function maxProfit(prices){
+  // let maxValue = 0;
+  // for(let i = 0; i < prices.length; i++){
+  //   for(let j = 0; j < prices.length; j++){
+  //     if(i !== j && i < j){
+
+  //       if(prices[j] - prices[i] > maxValue){
+  //         maxValue = prices[j] - prices[i];
+  //       }
+  //     }
+  //   }
+  // }
+  // return maxValue;
+  let minPrice = Infinity;
+  let maxProfit = 0;
+
+  for(let i = 0; i < prices.length; i++){
+    if(prices[i] < minPrice){
+      minPrice = prices[i];
+    }
+    const profit = prices[i] - minPrice;
+    if(profit > maxProfit){
+      maxProfit = profit;
+    }
+  }
+  return maxProfit;
+}
+
+const maxArray = [3,6,5,1,7,9,3,5,4];
+console.log(maxProfit(maxArray));
