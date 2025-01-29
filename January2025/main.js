@@ -26,15 +26,15 @@ const rps = (p1, p2) => {
     }
 };
 
-console.log(rps("rock", "Scissors"), "Player 1 won!");
-console.log(rps("rock", "paper"), "Player 2 won!");
-console.log(rps("rock", "rock"), "Draw!");
-console.log(rps("paper", "Scissors"), "Player 2 won!");
-console.log(rps("paper", "paper"), "Draw");
-console.log(rps("paper", "rock"), "Player 2 won!");
-console.log(rps("scissors", "Scissors"), "Draw!");
-console.log(rps("scissors", "paper"), "Player 2 won!");
-console.log(rps("scissors", "rock"), "Player 1 won!");
+// console.log(rps("rock", "Scissors"), "Player 1 won!");
+// console.log(rps("rock", "paper"), "Player 2 won!");
+// console.log(rps("rock", "rock"), "Draw!");
+// console.log(rps("paper", "Scissors"), "Player 2 won!");
+// console.log(rps("paper", "paper"), "Draw");
+// console.log(rps("paper", "rock"), "Player 2 won!");
+// console.log(rps("scissors", "Scissors"), "Draw!");
+// console.log(rps("scissors", "paper"), "Player 2 won!");
+// console.log(rps("scissors", "rock"), "Player 1 won!");
 
 const rockpaperscissors= (p1, p2) => {
     const winning = {rock: "scissors", paper: "rock", scissors: "paper"};
@@ -46,8 +46,33 @@ const rockpaperscissors= (p1, p2) => {
     }
 }
 
-console.log(rockpaperscissors("paper", "paper"), "game 2: Draw");
-console.log(rockpaperscissors("paper", "rock"), "Player 2 won!");
-console.log(rockpaperscissors("scissors", "Scissors"), "Draw!");
-console.log(rockpaperscissors("scissors", "paper"), "Player 2 won!");
-console.log(rockpaperscissors("scissors", "rock"), "Player 1 won!");
+// console.log(rockpaperscissors("paper", "paper"), "game 2: Draw");
+// console.log(rockpaperscissors("paper", "rock"), "Player 2 won!");
+// console.log(rockpaperscissors("scissors", "Scissors"), "Draw!");
+// console.log(rockpaperscissors("scissors", "paper"), "Player 2 won!");
+// console.log(rockpaperscissors("scissors", "rock"), "Player 1 won!");
+
+function sortArray(array) {
+    const oddNumbers = [];
+    const oddLocations = [];
+    for(let i = 0; i < array.length; i++){
+        if(array[i]%2 !== 0){
+            oddLocations.push(i);
+            oddNumbers.push(array[i]);
+        }
+    }
+    console.log("oddnumbers: ", oddNumbers);
+    console.log("oddlocations: ", oddLocations);
+    oddNumbers.sort((a, b) => a-b);
+
+    for(let i = 0; i < oddLocations.length; i++){
+        array[oddLocations[i]] = oddNumbers[i];
+    }
+    return array;
+  }
+
+
+
+
+const myArray=[9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
+console.log(sortArray(myArray), "[1, 8, 3, 6, 5, 4, 7, 2, 9, 0]");
