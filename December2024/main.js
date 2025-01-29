@@ -289,3 +289,17 @@ function maxProfit(prices){
 
 const maxArray = [3,6,5,1,7,9,3,5,4];
 console.log(maxProfit(maxArray));
+
+function maxProfitTwo(prices){
+  let maxProfit = 0;
+
+  for(let i = 1; i < prices.length; i++){
+    if(prices[i] > prices[i-1]){
+      maxProfit += prices[i] - prices[i-1];
+    }
+  }
+  return maxProfit;
+}
+
+const profitTwoArr = [7,1,5,3,6,4];
+console.log(maxProfitTwo(profitTwoArr), "7");
