@@ -35,3 +35,19 @@ console.log(rps("paper", "rock"), "Player 2 won!");
 console.log(rps("scissors", "Scissors"), "Draw!");
 console.log(rps("scissors", "paper"), "Player 2 won!");
 console.log(rps("scissors", "rock"), "Player 1 won!");
+
+const rockpaperscissors= (p1, p2) => {
+    const winning = {rock: "scissors", paper: "rock", scissors: "paper"};
+    if(p1.toLowerCase() === p2.toLowerCase()) return 'Draw!';
+    if (p2 === winning[p1]){
+        return 'Player 1 won!';
+    } else {
+        return 'Player 2 won!';
+    }
+}
+
+console.log(rockpaperscissors("paper", "paper"), "game 2: Draw");
+console.log(rockpaperscissors("paper", "rock"), "Player 2 won!");
+console.log(rockpaperscissors("scissors", "Scissors"), "Draw!");
+console.log(rockpaperscissors("scissors", "paper"), "Player 2 won!");
+console.log(rockpaperscissors("scissors", "rock"), "Player 1 won!");
