@@ -4,3 +4,4 @@ function boolToWord( bool ){
 
 const value = true;
 console.log(boolToWord(value), "Yes");
+
