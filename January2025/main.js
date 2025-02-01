@@ -79,19 +79,23 @@ console.log(sortArray(myArray), "[1, 8, 3, 6, 5, 4, 7, 2, 9, 0]");
 
 const binaryArrayToNumber = arr => {
     let value = 0;
-    console.log("arr", arr);
-    for (let i = 0; i < arr.length; i++) {
-        console.log("i", i);
-        console.log("value", value);
-        value = value * 2 + arr[i];
+    for(let i = 0; i < arr.length; i++){
+        value = (value * 2) + arr[i];
     }
     return value;
   };
 
 const bianaryOne = [0, 0, 0, 1];
-const bianaryTwo = [1, 1, 1, 1];
+const bianaryTwo = [1, 0, 0, 1, 1, 1];
 const binaryThree = [1,1,0,0,1,0];
 
 console.log(binaryArrayToNumber(bianaryOne), "1");
-console.log(binaryArrayToNumber(bianaryTwo), "15");
+console.log(binaryArrayToNumber(bianaryTwo), "39");
 console.log(binaryArrayToNumber(binaryThree), "50");
+
+function oddOrEven(array) {
+    return array.reduce((a, c) => a + c, 0) % 2 === 0 ? "even" : "odd";
+}
+
+ const oddOrEvenArray = [0, -1, -5];
+ console.log(oddOrEven(oddOrEvenArray), "even");
