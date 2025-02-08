@@ -39,3 +39,15 @@ const myBounce = 0.66;
 const myWindow = 1.5;
 
 console.log(bouncingBall(myHeight, myBounce, myWindow), "3");
+
+function booleanToString(b){
+  if(b === true){
+    return "true";
+  } else {
+    return "false";
+  }
+}
+
+const myBoolean = 2===3;
+console.log(booleanToString(myBoolean), "false");
+
