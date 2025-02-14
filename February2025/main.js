@@ -51,3 +51,16 @@ function booleanToString(b){
 const myBoolean = 2===3;
 console.log(booleanToString(myBoolean), "false");
 
+function solution(string) {
+  if(string === ""){
+    return "";
+  }
+  return string.replace(/([A-Z])/g, ' $1');
+}
+
+const myString = "camelCasing";
+const myOtherString = "myOtherString";
+
+console.log(solution(myString), "camel Casing");
+console.log(solution(myOtherString), "my Other String");
+
