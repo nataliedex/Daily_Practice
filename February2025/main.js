@@ -62,5 +62,22 @@ const myString = "camelCasing";
 const myOtherString = "myOtherString";
 
 console.log(solution(myString), "camel Casing");
+
 console.log(solution(myOtherString), "my Other String");
 
+function solution(string) {
+  if(string === ""){
+    return "";
+  }
+  return string.replace(/([A-Z])/g, ' $1');
+}
+
+function reverseWords(str) {
+  return str.split(" ")
+  .map(word => word.split("").reverse().join(""))
+  .join(" ");
+
+}
+
+const thisString = "This is an example!";
+console.log(reverseWords(thisString), "sihT si na !elpmaxe");
