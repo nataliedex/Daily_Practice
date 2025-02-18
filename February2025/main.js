@@ -81,3 +81,14 @@ function reverseWords(str) {
 
 const thisString = "This is an example!";
 console.log(reverseWords(thisString), "sihT si na !elpmaxe");
+
+
+function makeNegative(num) {
+  return num < 0 ? num : num * -1;
+}
+
+const thisNum = -5;
+const otherNum = 10;
+
+console.log(makeNegative(thisNum), "-5");
+console.log(makeNegative(otherNum), "-10");
