@@ -92,3 +92,26 @@ const otherNum = 10;
 
 console.log(makeNegative(thisNum), "-5");
 console.log(makeNegative(otherNum), "-10");
+
+
+var uniqueInOrder=function(iterable){
+  if(typeof iterable === "string"){
+    const newIterable = iterable.split("");
+  }
+    const newIterable = iterable;
+    if(newIterable.length === 0){
+      return [];
+    }
+
+  let result = [newIterable[0]];
+
+  for(let i = 1; i < newIterable.length; i++){
+    if(newIterable[i] !== newIterable[(i-1)]){
+      result.push(newIterable[i]);
+    }
+  }
+  return result;
+}
+
+const thisIterable = [1,2,2,3,3];
+console.log(uniqueInOrder(thisIterable), "[1,2,3]" );
