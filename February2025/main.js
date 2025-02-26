@@ -1,3 +1,5 @@
+const { get } = require("mongoose");
+
 function boolToWord( bool ){
     return bool ? "Yes" : "No";
   }
@@ -115,3 +117,20 @@ var uniqueInOrder=function(iterable){
 
 const thisIterable = [1,2,2,3,3];
 console.log(uniqueInOrder(thisIterable), "[1,2,3]" );
+
+function getGrade (s1, s2, s3) {
+  const grade = ((s1 + s2 + s3) / 3.0);
+  if(grade >= 90){
+    return 'A';
+  } else if(grade >=80){
+    return 'B';
+  } else if(grade >=70){
+    return 'C';
+  } else if(grade >=60){
+    return 'D';
+  } else {
+    return 'F';
+  }
+}
+
+console.log(getGrade(90, 90, 93), "A");
