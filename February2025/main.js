@@ -1,4 +1,3 @@
-const { get } = require("mongoose");
 
 function boolToWord( bool ){
     return bool ? "Yes" : "No";
@@ -134,3 +133,10 @@ function getGrade (s1, s2, s3) {
 }
 
 console.log(getGrade(90, 90, 93), "A");
+
+function updateLight(current) {
+  return (current === "green" ? "yellow" : current === "yellow" ? "red" : "green");
+
+}
+
+console.log(updateLight("green"), "yellow");
