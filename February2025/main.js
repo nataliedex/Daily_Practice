@@ -136,7 +136,20 @@ console.log(getGrade(90, 90, 93), "A");
 
 function updateLight(current) {
   return (current === "green" ? "yellow" : current === "yellow" ? "red" : "green");
-
 }
 
 console.log(updateLight("green"), "yellow");
+
+function longest(s1, s2) {
+  let newString = (s1 + s2).split("").sort();
+  let finalString = [];
+
+  for(let char of newString){
+    if(!finalString.includes(char)){
+      finalString.push(char);
+    }
+  }
+    return finalString.join("");
+}
+
+console.log(longest("xyaabbbccccdefww", "xxxxyyyyabklmopq"), "abcdefklmopqwxy");
