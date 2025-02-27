@@ -153,3 +153,16 @@ function longest(s1, s2) {
 }
 
 console.log(longest("xyaabbbccccdefww", "xxxxyyyyabklmopq"), "abcdefklmopqwxy");
+
+function doubleChar(str) {
+  let longString = [];
+  str.split("").forEach(char => {
+    longString.push(char + char);
+  });
+
+  return longString.join("");
+}
+
+
+
+console.log(doubleChar("String"), "SSttrriinngg");
