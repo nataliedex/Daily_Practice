@@ -163,6 +163,17 @@ function doubleChar(str) {
   return longString.join("");
 }
 
-
-
 console.log(doubleChar("String"), "SSttrriinngg");
+
+function simpleMultiplication(number) {
+  return number % 2 === 0 ? number * 8 : number * 9;
+}
+
+console.log(simpleMultiplication(8), "64");
+
+function enough(cap, on, wait) {
+  return cap - on - wait < 0 ? (cap - on - wait) * -1 : 0;
+}
+
+console.log(enough(100,60, 50), "10");
+
