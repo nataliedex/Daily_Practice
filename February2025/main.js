@@ -183,3 +183,28 @@ function switchItUp(number){
   }
 
 console.log(switchItUp(9), "nine");
+
+var isSquare = function(n){
+  return Number.isInteger(Math.sqrt(n));
+}
+
+console.log(isSquare(25), "true");
+
+function checkForFactor (base, factor) {
+  return base % factor === 0 ? true : false;
+}
+
+console.log(checkForFactor(10, 2), "true");
+
+function setAlarm(employed, vacation){
+  return vacation || !(employed) ? false : true;
+}
+
+console.log(setAlarm(true, false), "true");
+
+function century(year) {
+
+  return (year % 100 === 0 ? year / 100 : Math.ceil(year / 100));
+}
+
+console.log(century(1705), "18");
