@@ -131,3 +131,75 @@ function rot13(message){
 console.log(rot13("test"), "grfg");
 
 
+function filter_list(l) {
+    return l.filter(char => typeof(char) === "number");
+
+  }
+
+console.log(filter_list([1,2,'a','b']), "[1,2]");
+
+function findSmallestInt(arr) {
+    let smallest = arr[0];
+    arr.forEach(value => {
+        if(value < smallest){
+            smallest = value;
+        }
+    });
+    return smallest;
+  }
+
+console.log(findSmallestInt([34, 15, 88, 2]), "2");
+
+function paperwork(n, m) {
+  return (n < 0 || m < 0) ? 0 : n * m;
+}
+
+console.log(paperwork(5,5), "25");
+
+const areaOrPerimeter = function(l , w) {
+    return l === w ? l * w : (2 * l) + (2 * w);
+  };
+
+console.log(areaOrPerimeter(3,  3), "9");
+
+function isIsogram(str){
+    let newArray = [];
+    for(let char of str.toLowerCase().split("")){
+        if(newArray.includes(char)){
+            return false;
+        }
+        newArray.push(char);
+    }
+
+    return true;
+    
+  }
+
+console.log(isIsogram("aba"), "false");
+
+function validatePIN (pin) {
+    if(pin.length !== 4 && pin.length !== 6){
+        return false
+    }
+    return /^\d+$/.test(pin);
+  }
+
+console.log(validatePIN("1244"), "true");
+
+function cockroachSpeed(s) {
+    return Math.floor(s * 100000 / 3600);
+  }
+
+  console.log(cockroachSpeed("1.08"), "30");
+
+  function removeEveryOther(arr){
+    let newArray = [];
+    for(let i = 0; i < arr.length; i++){
+        if(i === 0 || i % 2 === 0){
+            newArray.push(arr[i]);
+        }
+    }
+    return newArray;
+  }
+
+  console.log(removeEveryOther(['Hello', 'Goodbye', 'Hello Again']),['Hello', 'Hello Again']);
