@@ -203,3 +203,29 @@ function cockroachSpeed(s) {
   }
 
   console.log(removeEveryOther(['Hello', 'Goodbye', 'Hello Again']),['Hello', 'Hello Again']);
+
+// triplet counting
+function tripletCounting(arr, sum){
+    let finalArray = [];
+
+    for(let i = 0; i < arr.length - 2; i++){
+        for(let j = i + 1; j < arr.length - 1; j++){
+            for(let k = j + 1; k < arr.length; k++){
+                if(arr[i] + arr[j] + arr[k] === sum){
+                    finalArray.push([arr[i], arr[j], arr[k]]);
+                }
+            }
+        }
+    }
+    return finalArray;
+}
+
+// array needs to be at least 3 values
+// array will contain only positive numbers
+// array will always have at least one instance where the 3 values will equal the sum
+// There will always be a sum value
+
+// loop through the array and and individually add the items and when there are 3 items in the
+// array we will sum them up and see if they equal the sum value
+
+console.log(tripletCounting([1, 2, 3, 4, 5, 6, 7, 8, 9], 15), "(1,5,9), (2,4,9), (2,5,8), (3,4,8)");
