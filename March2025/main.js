@@ -229,3 +229,55 @@ function tripletCounting(arr, sum){
 // array we will sum them up and see if they equal the sum value
 
 console.log(tripletCounting([1, 2, 3, 4, 5, 6, 7, 8, 9], 15), "(1,5,9), (2,4,9), (2,5,8), (3,4,8)");
+
+
+function tripletCountingPartDeux(arr, value){
+    let finalArray = [];
+    for(let i = 0; i < arr.length  -2; i++){
+        for(let j = i + 1; j < arr.length - 1; j++){
+            for(let k = j + 1; k < arr.length; k++) {
+                if(arr[i] + arr[j] + arr[k] === value){
+                    finalArray.push([arr[i], arr[j], arr[k]]);
+                }
+            }
+        }
+    }
+    return finalArray;
+
+
+}
+
+console.log(tripletCountingPartDeux([1, 2, 3, 4, 5, 6, 7, 8, 9], 15), "(1,5,9), (2,4,9), (2,5,8), (3,4,8)");
+
+function flatten(arr){
+    let result=[];
+    for(let item of arr){
+        if(Array.isArray(item)){
+            result.push(...flatten(item));
+        } else {
+            result.push(item);
+        }
+    }
+    return result;
+}
+
+//return should be a 1D array
+//the input should be an n dimensional array
+//array will never be empty
+
+// flatten([1, [2, [3, 4, [5]], 6], 7]) // Output: [1, 2, 3, 4, 5, 6, 7]
+
+console.log(flatten([1, [2, [3, 4, [5]], 6], 7]), "[1, 2, 3, 4, 5, 6, 7]");
+
+let numbers = [1, 2, 3, 4, 5];
+let maximum = Math.max(...numbers);
+
+console.log(maximum);
+
+let myString = "Hello my name is natalie"
+let stringArray = [...myString];
+let sortString = stringArray.sort();
+let sortToString = sortString.join("");
+console.log(stringArray);
+console.log(sortString);
+console.log(sortToString);
