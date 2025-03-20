@@ -306,3 +306,27 @@ function snail(array) {
 
 console.log(snail([[1,2,3, 4, 5], [6, 7, 8, 9, 10], [11,12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]]), "[1, 2, 3, 4, 5, 10, 15, 20, 25, 24, 23, 22, 21, 16, 11, 6, 7, 8, 9, 14, 19, 18, 17, 12, 13]");
 
+function newAvg(arr, newavg) {
+
+    let total = Math.ceil(newavg * (arr.length + 1) - (arr.reduce((a, c) => a + c, 0)));
+
+    if(total <= 0){
+
+        throw new Error("Expected New Average is too low");
+    
+    } else {
+        return total;
+    }
+     
+}
+
+// reduce method where we use an acc and a cur value and a starting place.
+// reduce method needs to go to another variable
+
+// (reduced arr + x )/ (arr.length + 1) = newavg
+// (x) = newavg * (arr.length + 1) - (reduced arr)
+
+
+// arr doesn't need to be greater than 0 because if it is 0l the newavg = x
+
+console.log(newAvg( [14, 30, 5, 7, 9, 11, 15], 92), "645");
