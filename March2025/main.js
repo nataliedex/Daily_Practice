@@ -347,8 +347,26 @@ function count(string){
     } else {
         return {};
     }
-    
+}
+console.log(count("aba", "{'a': 2, 'b': 1}"));
 
+function deleteNth(arr, n){
+    let checkObject = {};
+    let result = [];
+
+    for(let i = 0; i < arr.length; i++){
+        let num = arr[i];
+
+        if(checkObject[num] >= n){
+            continue;
+        } else {
+            result.push(num);
+            checkObject[num] = (checkObject[num] || 0) + 1;
+        }
+
+    }
+    return result;
 }
 
-console.log(count("aba", "{'a': 2, 'b': 1}"));
+console.log(deleteNth([1,2,3,1,2,1,2,3], 2), "[1,2,3,1,2,3]");
+console.log(deleteNth([20,37,20,21], 1), "[20,37,21]");
