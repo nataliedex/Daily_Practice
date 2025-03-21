@@ -330,3 +330,25 @@ function newAvg(arr, newavg) {
 // arr doesn't need to be greater than 0 because if it is 0l the newavg = x
 
 console.log(newAvg( [14, 30, 5, 7, 9, 11, 15], 92), "645");
+
+function count(string){
+    let resultObject = {};
+    if(string){
+        let stringArray = string.split("").sort();
+        for(let i = 0; i < stringArray.length; i++){
+            if(stringArray[i] in resultObject){
+                resultObject[stringArray[i]]++;
+            } else {
+                Object.assign(resultObject, { [stringArray[i]]: 1 });
+            }
+        }
+        return resultObject;
+
+    } else {
+        return {};
+    }
+    
+
+}
+
+console.log(count("aba", "{'a': 2, 'b': 1}"));
