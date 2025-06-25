@@ -15,17 +15,28 @@ console.log(oddOrEven([1, 3, 4]));
 export function binaryArrayToNumber(arr) {
     let value = 0;
     let j = 0;
-    console.log("arr: ", arr);
     for (let i = arr.length - 1; i >= 0; i--) {
-        console.log("i:", i);
-        console.log("j:", j);
-        console.log("current value of number: ", value);
-        console.log("arr[i]: ", arr[i]);
         value += (arr[i] === 1 ? 2 ** j : 0);
         j++;
-        console.log("value: ", value);
     }
     return value;
 }
 ;
 console.log(binaryArrayToNumber([1, 0, 1, 1]));
+export function xo(str) {
+    return str.toLowerCase().split('').filter(el => el === "x").length === str.toLowerCase().split('').filter(el => el === "o").length;
+}
+console.log(xo("ooXmmmXx"));
+export function longestConsec(strarr, k) {
+    if (k <= 0 || k > strarr.length)
+        return "";
+    let longestString = "";
+    for (let i = 0; i <= strarr.length - k; i++) {
+        const combined = strarr.slice(i, i + k).join("");
+        if (combined.length > longestString.length) {
+            longestString = combined;
+        }
+    }
+    return longestString;
+}
+console.log(longestConsec(["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"], 1));
